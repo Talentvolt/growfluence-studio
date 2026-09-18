@@ -26,8 +26,8 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-white/10 bg-forest-950/85 py-2 backdrop-blur-xl lg:py-2.5'
-          : 'border-b border-transparent py-2.5 lg:py-3'
+          ? 'border-b border-charcoal/10 bg-white/90 py-2 shadow-[0_1px_2px_rgba(13,20,18,0.04),0_12px_28px_-16px_rgba(13,20,18,0.18)] backdrop-blur-xl lg:py-2.5'
+          : 'border-b border-transparent bg-white py-3 lg:py-4'
       }`}
     >
       <nav
@@ -35,7 +35,7 @@ export default function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 lg:px-12"
       >
         <a href="#home" className="shrink-0 rounded-lg" aria-label="Growfluence Studio — home">
-          <Logo />
+          <Logo theme="dark" />
         </a>
 
         <ul className="hidden items-center gap-1 lg:flex">
@@ -43,7 +43,7 @@ export default function Navbar() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="relative rounded-full px-4 py-2 text-sm font-medium text-white/75 transition-colors duration-200 hover:text-white focus-visible:text-white"
+                className="relative rounded-full px-4 py-2 text-sm font-medium text-charcoal/70 transition-colors duration-200 hover:bg-charcoal/[0.04] hover:text-charcoal focus-visible:text-charcoal"
               >
                 {link.label}
               </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="group hidden items-center gap-2 rounded-full bg-accent-400 px-5 py-2.5 text-sm font-semibold text-forest-950 shadow-lg shadow-accent-500/20 transition-all duration-300 hover:bg-accent-300 hover:shadow-accent-400/30 sm:inline-flex"
+            className="group hidden items-center gap-2 rounded-full bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent-500/25 transition-all duration-300 hover:bg-accent-600 hover:shadow-accent-500/35 sm:inline-flex"
           >
             Get Started
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -65,7 +65,7 @@ export default function Navbar() {
             onClick={() => setOpen(true)}
             aria-label="Open navigation menu"
             aria-expanded={open}
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full border border-charcoal/15 bg-white text-charcoal transition-colors hover:bg-charcoal/[0.04] lg:hidden"
           >
             <Menu className="h-5 w-5" />
           </button>
@@ -82,7 +82,7 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-50 lg:hidden"
           >
-            <div className="absolute inset-0 bg-forest-950/95 backdrop-blur-xl" />
+            <div className="absolute inset-0 bg-white" />
 
             <motion.div
               initial={{ y: -18, opacity: 0 }}
@@ -92,12 +92,12 @@ export default function Navbar() {
               className="relative flex h-full flex-col px-5 pb-10 pt-4 sm:px-8"
             >
               <div className="flex items-center justify-between">
-                <Logo />
+                <Logo theme="dark" />
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label="Close navigation menu"
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-charcoal/15 bg-white text-charcoal transition-colors hover:bg-charcoal/[0.04]"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -114,7 +114,7 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       onClick={() => setOpen(false)}
-                      className="block border-b border-white/10 py-4 font-display text-2xl text-white transition-colors hover:text-accent-300"
+                      className="block border-b border-charcoal/10 py-4 font-display text-2xl text-charcoal transition-colors hover:text-accent-600"
                     >
                       {link.label}
                     </a>
@@ -125,7 +125,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-400 px-6 py-4 text-base font-semibold text-forest-950 transition-colors hover:bg-accent-300"
+                className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-accent-600"
               >
                 Get Started
                 <ArrowRight className="h-5 w-5" />
