@@ -26,7 +26,7 @@ export const navLinks = [
   { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
   { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export const socialLinks = [

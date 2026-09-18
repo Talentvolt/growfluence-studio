@@ -53,7 +53,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href="/contact"
             className="group hidden items-center gap-2 rounded-full bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent-500/25 transition-all duration-300 hover:bg-accent-600 hover:shadow-accent-500/35 sm:inline-flex"
           >
             Get Started
@@ -123,7 +123,7 @@ export default function Navbar() {
               </ul>
 
               <a
-                href="#contact"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-accent-600"
               >
