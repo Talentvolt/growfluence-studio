@@ -226,7 +226,7 @@ export default function ContactForm() {
           className="mx-auto mt-3 max-w-md text-pretty text-sm leading-relaxed text-charcoal/70"
         >
           Thanks{submittedName ? `, ${submittedName}` : ''}! We&apos;ve received your details and
-          will get back to you within one business day with next steps.
+          will get back to you within 30 minutes with next steps.
         </p>
         <button
           type="button"

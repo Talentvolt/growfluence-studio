@@ -10,12 +10,12 @@ export const site = {
   tagline: 'Marketing That Brings People To Your Table.',
   description:
     'Growfluence Studio helps restaurants and cafés grow through social media, paid advertising, content, influencer marketing and digital strategy.',
-  email: 'hello@growfluencestudio.com',
-  phone: '+91 90000 00000',
-  location: 'Bengaluru, India',
+  email: 'Growfluencestudio@gmail.com',
+  phone: '+91 8800673481',
+  location: 'Delhi NCR',
   /** WhatsApp number in international format, digits only. Override with VITE_WHATSAPP_NUMBER. */
   whatsapp: {
-    number: import.meta.env.VITE_WHATSAPP_NUMBER || '919000000000',
+    number: import.meta.env.VITE_WHATSAPP_NUMBER || '918800673481',
     message: 'Hi Growfluence Studio, I would like a free growth strategy for my restaurant.',
   },
 }

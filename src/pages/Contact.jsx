@@ -49,8 +49,8 @@ export default function Contact() {
                 delay={0.1}
                 className="mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-charcoal/70 sm:text-base"
               >
-                Tell us a little about your restaurant and your goals. We&apos;ll reply within one
-                business day with next steps and a free growth strategy.
+                Tell us a little about your restaurant and your goals. We&apos;ll reply within 30
+                minutes with next steps and a free growth strategy.
               </Reveal>
             </div>
 
@@ -153,7 +153,7 @@ export default function Contact() {
                     <Clock className="h-4 w-4 shrink-0 text-accent-400" aria-hidden="true" />
                     <p className="text-xs leading-relaxed text-white/65">
                       Average reply time:{' '}
-                      <span className="font-semibold text-white">under 1 business day</span>
+                      <span className="font-semibold text-white">within 30 minutes</span>
                     </p>
                   </div>
                 </aside>
