@@ -9,11 +9,8 @@ import {
 } from 'lucide-react'
 import { serviceOptions } from '../data/site'
 
-/**
- * Frontend-only submission.
- * Flip SIMULATE_ERROR to `true` to preview the error state — no backend is required.
- */
-const SIMULATE_ERROR = false
+/** Backend base URL, e.g. http://localhost:5000. Configure via VITE_API_URL. */
+const API_URL = (import.meta.env.VITE_API_URL || '').trim().replace(/\/+$/, '')
 
 const budgetOptions = [
   'Under ₹25,000 / month',
@@ -198,8 +195,31 @@ export default function ContactForm() {
     setSubmitError('')
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1400))
-      if (SIMULATE_ERROR) throw new Error('Simulated submission failure')
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: values.fullName.trim(),
+          businessName: values.businessName.trim(),
+          email: values.email.trim(),
+          phone: values.phone.trim(),
+          city: values.city.trim(),
+          service: values.service,
+          budget: values.budget,
+          message: values.message.trim(),
+        }),
+      })
+
+      const payload = await response.json().catch(() => null)
+
+      if (!response.ok) {
+        setStatus('error')
+        setSubmitError(
+          payload?.message ||
+            'Something went wrong while sending your enquiry. Please try again, or email us directly.',
+        )
+        return
+      }
 
       setSubmittedName(values.fullName.trim().split(' ')[0])
       setValues(initialValues)
