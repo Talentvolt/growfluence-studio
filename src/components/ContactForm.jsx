@@ -194,6 +194,16 @@ export default function ContactForm() {
     setStatus('loading')
     setSubmitError('')
 
+    console.log("API URL:", import.meta.env.VITE_API_URL)
+
+    if (!API_URL) {
+      setStatus('error')
+      setSubmitError(
+        'Something went wrong while sending your enquiry. Please try again, or email us directly.',
+      )
+      return
+    }
+
     try {
       const response = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
@@ -210,12 +220,14 @@ export default function ContactForm() {
         }),
       })
 
-      const payload = await response.json().catch(() => null)
+      const data = await response.json().catch(() => null)
 
-      if (!response.ok) {
+      console.log("Contact response:", response.status, data)
+
+      if (!response.ok || data?.success !== true) {
         setStatus('error')
         setSubmitError(
-          payload?.message ||
+          data?.message ||
             'Something went wrong while sending your enquiry. Please try again, or email us directly.',
         )
         return
