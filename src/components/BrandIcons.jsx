@@ -21,22 +21,6 @@ export function LinkedinIcon({ className = 'h-5 w-5', ...rest }) {
   )
 }
 
-export function YoutubeIcon({ className = 'h-5 w-5', ...rest }) {
-  return (
-    <svg {...base} className={className} {...rest}>
-      <path d="M21.6 7.2a2.6 2.6 0 0 0-1.83-1.84C18.2 4.9 12 4.9 12 4.9s-6.2 0-7.77.46A2.6 2.6 0 0 0 2.4 7.2C2 8.78 2 12 2 12s0 3.22.4 4.8a2.6 2.6 0 0 0 1.83 1.84C5.8 19.1 12 19.1 12 19.1s6.2 0 7.77-.46a2.6 2.6 0 0 0 1.83-1.84C22 15.22 22 12 22 12s0-3.22-.4-4.8ZM10 15.2V8.8l5.2 3.2-5.2 3.2Z" />
-    </svg>
-  )
-}
-
-export function FacebookIcon({ className = 'h-5 w-5', ...rest }) {
-  return (
-    <svg {...base} className={className} {...rest}>
-      <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.54-1.5h1.65V3.6c-.29-.04-1.27-.12-2.41-.12-2.38 0-4.01 1.45-4.01 4.12v2.3H7.5V13h2.77v8h3.23Z" />
-    </svg>
-  )
-}
-
 export function WhatsappIcon({ className = 'h-6 w-6', ...rest }) {
   return (
     <svg {...base} className={className} {...rest}>

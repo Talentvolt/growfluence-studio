@@ -30,10 +30,16 @@ export const navLinks = [
 ]
 
 export const socialLinks = [
-  { label: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
-  { label: 'LinkedIn', href: 'https://linkedin.com', icon: 'linkedin' },
-  { label: 'YouTube', href: 'https://youtube.com', icon: 'youtube' },
-  { label: 'Facebook', href: 'https://facebook.com', icon: 'facebook' },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/growfluencestudio/',
+    icon: 'instagram',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/growfluence-studio/?viewAsMember=true',
+    icon: 'linkedin',
+  },
 ]
 
 /**
