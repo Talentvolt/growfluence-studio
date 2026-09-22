@@ -1,4 +1,4 @@
-import { MapPin, Quote } from 'lucide-react'
+import { MapPin, Quote, Star } from 'lucide-react'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import { testimonials } from '../data/testimonials'
@@ -40,6 +40,18 @@ export default function Testimonials() {
                     <h3 className="font-display text-lg font-semibold text-forest-950">
                       {testimonial.restaurant}
                     </h3>
+                    {testimonial.rating > 0 && (
+                      <div className="mt-1.5 flex items-center gap-0.5 text-accent-500">
+                        <span className="flex items-center gap-0.5" aria-hidden="true">
+                          {Array.from({ length: testimonial.rating }).map((_, starIndex) => (
+                            <Star key={starIndex} className="h-3.5 w-3.5 fill-current" />
+                          ))}
+                        </span>
+                        <span className="sr-only">
+                          {testimonial.rating} out of 5 stars
+                        </span>
+                      </div>
+                    )}
                     {testimonial.location && (
                       <p className="mt-1 flex items-start gap-1.5 text-xs leading-relaxed text-charcoal/55">
                         <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent-500" aria-hidden="true" />
@@ -51,7 +63,7 @@ export default function Testimonials() {
                   <Quote className="h-8 w-8 shrink-0 text-accent-400/40" aria-hidden="true" />
                 </div>
 
-                <blockquote className="mt-5 flex-1 text-pretty text-[15px] leading-relaxed text-charcoal/75">
+                <blockquote className="mt-5 flex-1 whitespace-pre-line text-pretty text-[15px] leading-relaxed text-charcoal/75">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 
