@@ -2,7 +2,6 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import { posts } from '../data/blog'
-import { getImage } from '../data/images'
 
 export default function Blog() {
   return (
@@ -35,7 +34,7 @@ export default function Blog() {
                 >
                   <div className="relative overflow-hidden">
                     <img
-                      src={getImage(post.image, 800)}
+                      src={post.image}
                       alt={post.title}
                       loading="lazy"
                       decoding="async"

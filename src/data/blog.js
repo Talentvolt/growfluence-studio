@@ -1,4 +1,8 @@
 /** Insights / blog cards. Replace with real articles and links. */
+import burgerWokImage from '../assets/burger-wok.webp'
+import cafeBistro57Image from '../assets/cafe-bistro-57.jpg'
+import bikanerSweetsSnacksImage from '../assets/bikaner-sweets-snacks.webp'
+
 export const posts = [
   {
     id: 'p1',
@@ -6,7 +10,7 @@ export const posts = [
     category: 'Growth',
     date: 'Mar 12, 2026',
     readTime: '6 min read',
-    image: 'restaurantTables',
+    image: burgerWokImage,
     href: '#blog',
   },
   {
@@ -15,7 +19,7 @@ export const posts = [
     category: 'Social Media',
     date: 'Feb 28, 2026',
     readTime: '5 min read',
-    image: 'reelShoot',
+    image: cafeBistro57Image,
     href: '#blog',
   },
   {
@@ -24,7 +28,7 @@ export const posts = [
     category: 'Local SEO',
     date: 'Feb 14, 2026',
     readTime: '4 min read',
-    image: 'chefPlating',
+    image: bikanerSweetsSnacksImage,
     href: '#blog',
   },
 ]
