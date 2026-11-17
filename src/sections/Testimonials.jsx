@@ -27,13 +27,35 @@ export default function Testimonials() {
               <figure className="flex h-full flex-col rounded-2xl border border-forest-950/8 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-forest-950/10 sm:p-7">
                 <div className="flex items-start gap-4">
                   {testimonial.image && (
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.imageAlt ?? testimonial.restaurant}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-14 w-14 shrink-0 rounded-xl object-cover ring-1 ring-forest-950/10 sm:h-16 sm:w-16"
-                    />
+                    <picture className="block h-14 w-14 shrink-0 sm:h-16 sm:w-16">
+                      {testimonial.fallbackImage && (
+                        <source srcSet={testimonial.image} type="image/avif" />
+                      )}
+                      {testimonial.fallbackImage && (
+                        <source srcSet={testimonial.fallbackImage} type="image/webp" />
+                      )}
+                      {testimonial.fallbackJpg && (
+                        <source srcSet={testimonial.fallbackJpg} type="image/jpeg" />
+                      )}
+                      <img
+                        src={testimonial.fallbackJpg || testimonial.fallbackImage || testimonial.image}
+                        alt={testimonial.imageAlt ?? testimonial.restaurant}
+                        loading="lazy"
+                        decoding="async"
+                        onError={(e) => {
+                          const target = e.currentTarget
+                          if (testimonial.fallbackImage && target.src !== testimonial.fallbackImage) {
+                            target.src = testimonial.fallbackImage
+                          } else if (testimonial.fallbackJpg && target.src !== testimonial.fallbackJpg) {
+                            target.src = testimonial.fallbackJpg
+                          } else if (!target.dataset.triedPublic) {
+                            target.dataset.triedPublic = 'true'
+                            target.src = '/assets/chaileela.jpg'
+                          }
+                        }}
+                        className="h-full w-full rounded-xl object-cover ring-1 ring-forest-950/10"
+                      />
+                    </picture>
                   )}
 
                   <div className="min-w-0 flex-1">
@@ -69,7 +91,7 @@ export default function Testimonials() {
 
                 <figcaption className="mt-6 border-t border-forest-950/8 pt-5">
                   <p className="text-sm font-semibold text-forest-950">
-                    &mdash; {testimonial.attribution}
+                    &mdash; {testimonial.attribution.replace(/^[—–-]\s*/, '')}
                   </p>
                 </figcaption>
               </figure>

@@ -8,6 +8,9 @@ import jashnImage from '../assets/jashn.webp'
 import burgerWokImage from '../assets/burger-wok.webp'
 import cafeBistro57Image from '../assets/cafe-bistro-57.jpg'
 import bikanerSweetsSnacksImage from '../assets/bikaner-sweets-snacks.webp'
+import chaileelaImage from '../assets/chaileela.avif'
+import chaileelaWebpImage from '../assets/chaileela.webp'
+import chaileelaJpgImage from '../assets/chaileela.jpg'
 
 export const testimonials = [
   {
@@ -53,5 +56,18 @@ export const testimonials = [
     rating: 5,
     image: bikanerSweetsSnacksImage,
     imageAlt: 'Bikaner Sweets & Snacks storefront',
+  },
+  {
+    id: 'chaileela',
+    restaurant: 'Chaileela',
+    location: 'Noida Sec 127',
+    quote:
+      "We recently partnered with Growfluence Studio to manage and strengthen our Chaileela's cafe at Noida Sec 127 digital presence, and our experience so far has been positive. Their team is handling our social media management, marketing activities, influencer collaborations, food and ambience shoots, and Google Business Profile (GMB) management. We appreciate their proactive approach, creative content planning, attention to detail and understanding our target audience. What we particularly like is their focus on local marketing, engaging content, and strategies designed to increase restaurant visibility and customer footfall. Although our association is still new, the team has been supportive, responsive, and enthusiastic about helping grow. Looking forward to building a strong and successful partnership with Growfluence Studio!",
+    attribution: 'Team Chaileela - Noida 127',
+    rating: 5,
+    image: chaileelaImage,
+    fallbackImage: chaileelaWebpImage,
+    fallbackJpg: chaileelaJpgImage,
+    imageAlt: 'Chaileela cafe, Noida Sec 127',
   },
 ]
